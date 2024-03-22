@@ -35,12 +35,12 @@ class HomeHeader extends StatelessWidget {
           IcnButton(
             svgsrc: 'Cart Icon',
             press: () {},
-            numOfTime: 3,
+            numOfTime: 4,
           ),
           IcnButton(
             svgsrc: 'Bell',
             press: () {},
-            numOfTime: 3,
+            numOfTime: 4,
           ),
         ],
       ),
@@ -63,41 +63,47 @@ class IcnButton extends StatelessWidget {
     return InkWell(
       onTap: press,
       borderRadius: BorderRadius.circular(50),
-      child: Stack(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            height: 46,
-            width: 46,
-            decoration: BoxDecoration(
-                color: secondaryColor.withOpacity(0.1), shape: BoxShape.circle),
-            child: SvgPicture.asset("assets/icons/$svgsrc.svg"),
-          ),
-          Positioned(
-            top: -3,
-            right: 0,
-            child: Container(
+      child: SizedBox(
+        height: 46,
+        width: 46,
+        child: Stack(
+          clipBehavior:Clip.none,
+          children: [
+            Container(
               padding: const EdgeInsets.all(12),
-              height: 16,
-              width: 16,
               decoration: BoxDecoration(
-                color: const Color(0xFFFF4848),
+                color: secondaryColor.withOpacity(0.1),
                 shape: BoxShape.circle,
-                border: Border.all(width: 1.5, color: Colors.white),
               ),
-              child: Center(
-                child: Text(
-                  '$numOfTime',
-                  style: const TextStyle(
-                      fontSize: 10,
+              child: SvgPicture.asset("assets/icons/$svgsrc.svg"),
+            ),
+            Positioned(
+              top: -3,
+              right: 0,
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                height: 16,
+                width: 16,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFF4848),
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 1.5, color: Colors.white),
+                ),
+                child: Center(
+                  child: Text(
+                    '$numOfTime',
+                    style: const TextStyle(
+                      fontSize: 40,
                       height: 1,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600),
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
