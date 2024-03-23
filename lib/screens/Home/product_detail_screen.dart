@@ -6,7 +6,6 @@ import 'product/top_rounded_container.dart';
 import 'package:ecomflutter/models/product.dart';
 import 'package:ecomflutter/constants/colors.dart';
 import 'package:ecomflutter/common_widgets/primary_button.dart';
-import 'package:ecomflutter/screens/Home/components/rounded_icn_btn.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({Key? key}) : super(key: key);

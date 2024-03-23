@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ecomflutter/features/homescreen.dart';
 import 'package:ecomflutter/routing/not_found_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:ecomflutter/screens/splash/splash_screen.dart';
+// import 'package:ecomflutter/features/homescreen.dart';
 
-enum AppRoute {
-  splashScreen, home
-}
+enum AppRoute { splashScreen, home }
 
 class PostRouteExtra {}
 
@@ -15,7 +13,7 @@ class PostRouteExtra {}
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 @Riverpod(keepAlive: true)
-GoRouter goRouter( ref) {
+GoRouter goRouter(ref) {
   return GoRouter(
     initialLocation: '/',
     debugLogDiagnostics: false,
