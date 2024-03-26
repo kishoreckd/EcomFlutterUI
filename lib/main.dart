@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:ecomflutter/routes.dart';
 import 'package:ecomflutter/constants/colors.dart';
 import 'package:ecomflutter/screens/splash/splash_screen.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
-void main() {
+
+Future<void> main() async {
+ 
   runApp(const MyApp());
 }
 
@@ -46,7 +49,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      // home: SplashScreen(),
+      // home: const Home(),
       initialRoute: SplashScreen.routeName,
       routes: routes,
     );
